@@ -3,26 +3,40 @@
 html {
     font-size: 100%; /* keep */
     box-sizing: border-box; /* keep */
+
 }
 * {
     box-sizing: inherit; /* keep */
 }
-body {
-    font-family: sans-serif;
+body {font-family: 'PT Sans', 'Tahoma', sans-serif;
     background: #5598b2; /* keep */
     color: #333; /* keep */
     margin: 0; /* keep */
+
 }
-h1, h2 {
-    font-family: serif;
+h1 {
+  font-family: 'Solway', 'Palatino', serif;
+  font-size: 2.5em;
+  margin: 0;
 }
+
+
+h2 {
+  font-family: 'Solway', 'Palatino', serif;
+}
+
+
 #tagline {
     font-style: italic;
+    font-size: 2rem;
+    margin: 0;
 }
+
 /* all images will stretch to fill their containing element */
 img {
     display: block; /* keep */
     width: 100%; /* keep */
+
 }
 
 /* In the grid container below, you will change the columns,
@@ -38,10 +52,14 @@ img {
     margin: auto; /* keep */
     display: grid; /* keep */
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: 23% 14% 10% 15% 33% 5%;
     grid-template-areas:
-        "header arial georgia pairing bobwhite-quail"
-        "readability line-length helvetica typeface footer";
+      "header header header header header"
+      "pairing pairing pairing arial georgia"
+      "bobwhite-quail bobwhite-quail readability readability readability"
+      "bobwhite-quail bobwhite-quail line-length line-length line-length"
+      "typeface typeface typeface helvetica helvetica"
+      "footer footer footer footer footer";
 }
 
 /* all grid items -
@@ -53,51 +71,104 @@ img {
 header {
     grid-area: header; /* keep */
     background: #fff; /* keep */
+    text-align: center;
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 5rem;
+    margin: 0;
 }
+
 #arial {
     grid-area: arial; /* keep */
     background: #a8e8ff; /* keep */
+    margin: 0;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
 }
+
 #georgia {
     grid-area: georgia; /* keep */
     background: #a8e8ff; /* keep */
+    margin: 0;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
 }
 #pairing {
     grid-area: pairing; /* keep */
     background: #a8e8ff; /* keep */
+    margin: 0;
+    padding: 3rem;
+    font-size: 1.75rem;
 }
 #bobwhite-quail {
     grid-area: bobwhite-quail; /* keep */
     background: #d2f4ff; /* keep */
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 1.5rem;
+    padding-bottom: 2rem;
 }
 #readability {
     grid-area: readability; /* keep */
     background: #d2f4ff; /* keep */
+    padding-right: 4rem;
+    padding-left: 1rem;
+    padding-top: 2rem;
+    font-size: 1.1rem;
 }
+
 #line-length {
     grid-area: line-length; /* keep */
     background: #d2f4ff; /* keep */
+    padding-right: 4rem;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    padding-bottom: 2rem;
 }
+
 #helvetica {
     grid-area: helvetica; /* keep */
     background: #fff; /* keep */
+    padding: 2.5rem;
+    margin-bottom: 30rem;
+    margin-top: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
+
 #typeface {
     grid-area: typeface; /* keep */
     color: #d2f4ff; /* keep */
     background: #5598b2; /* keep */
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 3rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: .09em .09em .1em #101010;
+    margin: 0;
 }
+
 footer {
     grid-area: footer; /* keep */
     background: #b2988a; /* keep */
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0;
 }
 
 /* end of all 10 grid items */
 
 
 /* pseudo classes */
+
 a {
     color: #7c6a60; /* keep */
+    text-shadow: none;
+
 }
 a:hover {
     color: #f4cdb7; /* keep */
@@ -105,3 +176,24 @@ a:hover {
 }
 
 /* media queries below - only 1 is needed */
+
+@media screen and (max-width: 600px)
+{
+  #container {
+grid-template-columns: repeat(1, 1fr);
+grid-template-rows: repeat(9, 1fr);
+grid-template-areas:
+"header"
+"arial"
+"georgia"
+"pairing"
+"bobwhite-quail"
+"readability"
+"line-length"
+"helvetica"
+"typeface"
+"footer";
+}
+header img {display: none;}
+p {text-align: center;}
+}
